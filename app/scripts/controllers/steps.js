@@ -8,10 +8,15 @@
  * Controller of the djoisajdoijdsApp
  */
 angular.module('djoisajdoijdsApp')
-  .controller('StepsCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('StepsCtrl', function ($scope, $location) {
+
+
+    $scope.fillBankData = function(){
+
+
+      console.log("inited","kaks")
+      alert(3)
+    }
+
+
   });
