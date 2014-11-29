@@ -1,0 +1,16 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Receiver</th>
+        <th>Sum</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="transaction in transactions">
+        <td>{{transaction.name}}</td>
+        <td>{{transaction.sum}}</td>
+        <td>{{transaction.status}}</td>
+    </tr>
+    </tbody>
+</table>
