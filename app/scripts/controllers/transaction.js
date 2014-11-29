@@ -20,8 +20,10 @@ angular.module('djoisajdoijdsApp')
         $location.path("/friends");
       };
       $scope.confirm = function() {
-        //TODO: show confirmation message
-        $location.path("/friends");
+       $scope.message= {};
+        $scope.message.value = $scope.amount;
+
+        $scope.succ = true;
       };
 
   });

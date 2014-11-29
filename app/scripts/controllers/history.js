@@ -9,6 +9,8 @@
  */
 angular.module('djoisajdoijdsApp')
   .controller('HistoryCtrl', function ($scope) {
+
+
     $scope.transactions = [
       {
         name: 'Bob Marley',
