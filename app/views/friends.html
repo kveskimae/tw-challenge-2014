@@ -41,12 +41,10 @@
 <div class="container with-sidebar">
 	<div class="row">
 		<div class="hack-three">
-
 			<div class="alert alert-warning" data-ng-if="error">
 				<a class="close" data-dismiss="alert">&times;</a>
 				<strong>User is not in the system. An invitation was send. </strong>
 			</div>
-
 			<div class="alert alert-success" data-ng-if="succ">
 				<a class="close" data-dismiss="alert">&times;</a>
 				<strong>Used is added to the friend list</strong>
@@ -60,7 +58,7 @@
 				</div>
 				<br>
 				<button type="button" class="btn btn-default" aria-label="Left Align">
-					<span class="glyphicon " aria-hidden="true" data-ng-click="addingUser()">add friend </span>
+					<span class="glyphicon " aria-hidden="true" data-ng-click="addingUser()"></span> add friend
 				</button>
 
 			</form>
@@ -80,11 +78,9 @@
 					<td>{{friend.name}}</td>
 					<td>{{friend.email}}</td>
 					<td>
-						<button type="button" class="btn btn-default" aria-label="Left Align">
-							<a href="#/process-transaction">
-								<span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> send money
-							</a>
-						</button>
+						<a href="#/process-transaction" class="btn btn-default">
+							<span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> send money
+						</a>
 					</td>
 
 				</tr>
