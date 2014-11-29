@@ -1,0 +1,39 @@
+.navbar {
+	background: #fff;
+	border-bottom: 0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+
+	.navbar-brand {
+		color: #000;
+		font: 300 18px 'proxima-nova', Helvetica, Arial, sans-serif;
+	}
+
+	.user {
+		float: right;
+		list-style: none;
+		margin: 9px 0 0 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			float: left;
+			margin-left: 9px;
+		}
+
+		.btn {
+			background: #00c6ff;
+			border: 0;
+			border-radius: 2px;
+			box-shadow: 0 2px 0 #0090ba;
+			color: #fff;
+			float: left;
+			font: 300 14px 'proxima-nova', Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
+
+			&.green {
+				background: #55d944;
+				box-shadow: 0 2px 0 #3C9830;
+			}
+		}
+	}
+}
