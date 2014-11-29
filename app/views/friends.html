@@ -1,0 +1,90 @@
+
+
+<h2><small>Your contacts</small></h2>
+
+
+        <table class="table table-striped">
+            <thead><tr><th>Name</th><th>Email</th><th>&nbsp;</th></tr></thead>
+            <tbody>
+            <tr ng-repeat="friend in friendsList" >
+                <td>{{friend.name}}</td><td>{{friend.email}}</td>
+                <td class="text-right">
+                    <span ng-if="friend.verified">
+                        <button type="button"  class="btn btn-primary text-right">Send</button>
+                    </span>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+<h2><small>Import Contacts</small></h2>
+
+
+
+<table class="table table-striped">
+    <tbody>
+    <tr>
+        <td>
+            <img src="images/fb.jpeg" alt="Smiley face" height="42" width="42">
+        </td>
+        <td><p class="lead">Facebook</p>
+            <p>Add names and email addresses from your Facebook friends.</p>
+        </td>
+        <td class="text-right">
+            <button type="button"  class="btn btn-default">Import</button>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            <img src="images/gmail.jpeg" alt="Smiley face" height="42" width="42">
+        </td>
+        <td>Google
+            <p>Import Contacts from a Google account.</p>
+        </td>
+        <td class="text-right">
+            <button type="button"  class="btn btn-default">Import</button>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            <img src="images/outlook.jpeg" alt="Smiley face" height="42" width="80">
+        </td>
+        <td>Outlook.com
+            <p>Import contacts from an Outlook.com (formerly Hotmail) account.</p>
+        </td>
+        <td class="text-right">
+            <button type="button"  class="btn btn-default">Import</button>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+<h2><small>Find</small></h2>
+
+<form class="form-horizontal" role="form">
+    <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">Name / Email</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="Type here" ng-model="searchText">
+        </div>
+    </div>
+</form>
+
+
+<table id="searchTextResults" ng-hide="searchText.length < 2" class="table table-striped">
+    <tr><th>Name</th><th>Email</th><th>&nbsp;</th></tr>
+    <tr ng-repeat="friend in friendsSearch | filter:searchText">
+        <td>{{friend.name}}</td>
+        <td>{{friend.email}}</td>
+        <td class="text-right"><button ng-click="moveToFriends(friend)"  class="btn btn-default">Add</button></td>
+    </tr>
+</table>
+
+
