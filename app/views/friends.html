@@ -1,112 +1,100 @@
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <!-- height="1284" width="736" -->
-                <img src="images/fbimport.png"
-                     height="450" width="550"
-                        >
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            </div>
-        </div>
+<nav id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">TransferWise</a>
     </div>
+
+  </div>
+</nav>
+
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li>
+        <a href="#">Friends</a>
+      </li>
+      <li>
+        <a href="#">Bank account</a>
+      </li>
+      <li>
+        <a href="#">History</a>
+      </li>
+      <li>
+        <a href="#">Settings</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
 </div>
 
-<h2><small>Your contacts</small></h2>
+<div class="container with-sidebar">
+  <div class="row">
+    <div class="col-md-9">
+      <div>
+
+        <br>
+        <br>
+
+        <div class="alert alert-warning" data-ng-if="error">
+          <a  class="close" data-dismiss="alert">&times;</a>
+          <strong>User is not in the system. An invitation was send. </strong>
+        </div>
+
+        <div class="alert alert-success" data-ng-if="succ">
+          <a  class="close" data-dismiss="alert">&times;</a>
+          <strong>Used is added to the friend list</strong>
+        </div>
+
+        <form role="form">
+          <div class="form-group">
+            <label>Search for a friend</label>
+            <input class="form-control" id="name" data-ng-model="insertedUser" placeholder="EMAIL or name credentials">
+          </div>
+          <br>
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon " aria-hidden="true" data-ng-click="addingUser()">add friend </span>
+        </button>
+
+        </form>
+        <br>
 
 
-        <table class="table table-striped">
-            <thead><tr><th>Name</th><th>Email</th><th>&nbsp;</th></tr></thead>
-            <tbody>
-            <tr ng-repeat="friend in friendsList" >
-                <td>{{friend.name}}</td><td>{{friend.email}}</td>
-                <td class="text-right">
-                    <span ng-if="friend.verified">
-                        <button type="button"  class="btn btn-primary text-right">Send</button>
-                    </span>
-                </td>
-            </tr>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>email</th>
+            <th>action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr data-ng-repeat="friend in friendsList">
+            <td>{{friend.name}}</td>
+            <td>{{friend.email}}</td>
+            <td><button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-transfer" aria-hidden="true">send money </span>
+            </button></td>
 
-            </tbody>
+          </tr>
+          </tbody>
         </table>
 
-<h2><small>Import Contacts</small></h2>
 
 
-
-<table class="table table-striped">
-    <tbody>
-    <tr>
-        <td>
-            <img src="images/fb.jpeg" alt="Smiley face" height="42" width="42">
-        </td>
-        <td>
-            <p>Facebook</p>
-            <p>Add names and email addresses from your Facebook friends.</p>
-        </td>
-        <td class="text-right">
-            <button type="button"  class="btn btn-default"
-                    data-toggle="modal" data-target="#myModal"
-                    >Import</button>
-
-        </td>
-    </tr>
-
-
-    <tr>
-        <td>
-            <img src="images/gmail.jpeg" alt="Smiley face" height="42" width="42">
-        </td>
-        <td>Google
-            <p>Import Contacts from a Google account.</p>
-        </td>
-        <td class="text-right">
-            <button type="button"  class="btn btn-default">Import</button>
-        </td>
-    </tr>
-
-
-    <tr>
-        <td>
-            <img src="images/outlook.jpeg" alt="Smiley face" height="42" width="80">
-        </td>
-        <td>Outlook.com
-            <p>Import contacts from an Outlook.com (formerly Hotmail) account.</p>
-        </td>
-        <td class="text-right">
-            <button type="button"  class="btn btn-default">Import</button>
-        </td>
-    </tr>
-
-    </tbody>
-</table>
-
-
-<h2><small>Find</small></h2>
-
-<form class="form-horizontal" role="form">
-    <div class="form-group form-group-sm">
-        <label class="col-sm-2 control-label" for="formGroupInputSmall">Name / Email</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="text" id="formGroupInputSmall" placeholder="Type here" ng-model="searchText">
-        </div>
+      </div>
     </div>
-</form>
 
+  </div>
 
-<table id="searchTextResults" ng-hide="searchText.length < 2" class="table table-striped">
-    <tr><th>Name</th><th>Email</th><th>&nbsp;</th></tr>
-    <tr ng-repeat="friend in friendsSearch | filter:searchText">
-        <td>{{friend.name}}</td>
-        <td>{{friend.email}}</td>
-        <td class="text-right"><button ng-click="moveToFriends(friend)"  class="btn btn-default">Add</button></td>
-    </tr>
-</table>
+</div>
+</div>
 
 

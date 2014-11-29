@@ -10,6 +10,8 @@
 angular.module('djoisajdoijdsApp')
   .controller('StepsCtrl', function ($scope, $location, $rootScope) {
 
+    $rootScope.logged = true;
+
     console.log($rootScope.bankData)
 
 
@@ -19,6 +21,15 @@ angular.module('djoisajdoijdsApp')
     $scope.fillBankData = function(){
       $location.path('/bank-data')
     }
+
+
+
+    $scope.pay = function(){
+      $location.path('/friends')
+    }
+
+
+
 
 
   });
