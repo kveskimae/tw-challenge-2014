@@ -37,6 +37,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // CONTENT
 //----------------------------------*/
 
+@import 'content/_modal.scss';
 @import 'content/_homepage.scss';
 @import 'content/_account.scss';
 

@@ -23,7 +23,6 @@
 </head>
 <body ng-app="djoisajdoijdsApp" class="homepage">
 
-
 <nav id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
@@ -37,16 +36,155 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="user">
-				<li><a href="#" class="btn btn-default">Login</a></li>
-				<li><a href="#" class="btn btn-default green">Register</a></li>
+				<li><a href="#" class="btn btn-default" data-toggle="modal" data-target="#loginModal">Login</a></li>
+				<li><a href="#" class="btn btn-default green" data-toggle="modal" data-target="#registerModal">Register</a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
+<div class="container">
+	<div class="jumbotron">
+		<h1>Transfer money with ease</h1>
+		<h2>in 2 simple steps&hellip;</h2>
+		<div class="cont">
+			<div id="ytplayer"></div>
+		</div>
+		<div class="cont">
+			<a href="#" class="btn btn-default btn-lg">
+				<span aria-hidden="true">Learn more &rarr;</span>
+			</a>
+		</div>
+	</div>
+</div>
 
+<!-- Modal -->
+<div class="modal custom fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="registerModalLabel">Register</h4>
+			</div>
+			<div class="modal-body">
+				<form method="post">
+					<div class="cont">
+						<input type="text" placeholder="Email" />
+					</div>
+					<div class="cont">
+						<input type="password" placeholder="Password" />
+					</div>
+					<div class="cont">
+						<input type="re-password" placeholder="Repeat password" />
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">Register</button>
+			</div>
+		</div>
+	</div>
+</div>
 
-<div ng-view=""></div>
+<!-- Modal -->
+<div class="modal custom fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="loginModalLabel">Welcome back!</h4>
+			</div>
+			<div class="modal-body">
+				<form method="post">
+					<div class="cont">
+						<input type="text" placeholder="Email" />
+					</div>
+					<div class="cont">
+						<input type="password" placeholder="Password" />
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">Login</button>
+			</div>
+		</div>
+	</div>
+</div>
 
+<!-- Modal -->
+<div class="modal custom fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="registerModalLabel">Register</h4>
+			</div>
+			<div class="modal-body">
+				<form method="post">
+					<div class="cont">
+						<input type="text" placeholder="Email" />
+					</div>
+					<div class="cont">
+						<input type="password" placeholder="Password" />
+					</div>
+					<div class="cont">
+						<input type="re-password" placeholder="Repeat password" />
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">Register</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal custom fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="loginModalLabel">Welcome back!</h4>
+			</div>
+			<div class="modal-body">
+				<form method="post">
+					<div class="cont">
+						<input type="text" placeholder="Email" />
+					</div>
+					<div class="cont">
+						<input type="password" placeholder="Password" />
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">Login</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	// Load the IFrame Player API code asynchronously.
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/player_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	// Replace the 'ytplayer' element with an <iframe> and
+	// YouTube player after the API code downloads.
+	var player;
+	function onYouTubePlayerAPIReady() {
+		player = new YT.Player('ytplayer', {
+			height: '260',
+			width: '480',
+			videoId: 'F9kNnTD6ndw',
+			playopts: {
+				showinfo: 0,
+				theme: 'light'
+			}
+		});
+	}
+</script>
 
 <!-- build:js(.) scripts/oldieshim.js -->
 <!--[if lt IE 9]>
@@ -80,8 +218,7 @@
 <!-- endbower -->
 <!-- endbuild -->
 
-
-
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/about.js"></script>
@@ -89,7 +226,6 @@
 <script src="scripts/controllers/history.js"></script>
 <script src="scripts/controllers/steps.js"></script>
 <script src="scripts/controllers/bank-data.js"></script>
-<script src="scripts/controllers/unauth.js"></script>
-<script src="scripts/controllers/transaction.js"></script><!-- endbuild -->
+<!-- endbuild -->
 </body>
 </html>
