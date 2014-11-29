@@ -1,99 +1,100 @@
 <nav id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">TransferWise</a>
-    </div>
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="logout">
+				<a class="navbar-brand" href="#">Hello, Dima!</a>
+				<a href="" class="btn btn-default">Logout</a>
+			</div>
+		</div>
 
-  </div>
+	</div>
 </nav>
 
 <div id="wrapper">
-  <!-- Sidebar -->
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li>
-        <a href="#">Friends</a>
-      </li>
-      <li>
-        <a href="#">Bank account</a>
-      </li>
-      <li>
-        <a href="#">History</a>
-      </li>
-      <li>
-        <a href="#">Settings</a>
-      </li>
-    </ul>
-  </div>
-  <!-- /#sidebar-wrapper -->
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li>
+				<a href="#/friends">Friends</a>
+			</li>
+			<li>
+				<a href="#/bank-data">Bank account</a>
+			</li>
+			<li>
+				<a href="#/history">History</a>
+			</li>
+			<li>
+				<a href="#/settings">Settings</a>
+			</li>
+		</ul>
+	</div>
+	<!-- /#sidebar-wrapper -->
 
 </div>
 
 <div class="container with-sidebar">
-  <div class="row">
-    <div class="col-md-9">
-      <div>
+	<div class="row">
+		<div class="hack-three">
 
-        <br>
-        <br>
+			<div class="alert alert-warning" data-ng-if="error">
+				<a class="close" data-dismiss="alert">&times;</a>
+				<strong>User is not in the system. An invitation was send. </strong>
+			</div>
 
-        <div class="alert alert-warning" data-ng-if="error">
-          <a  class="close" data-dismiss="alert">&times;</a>
-          <strong>User is not in the system. An invitation was send. </strong>
-        </div>
+			<div class="alert alert-success" data-ng-if="succ">
+				<a class="close" data-dismiss="alert">&times;</a>
+				<strong>Used is added to the friend list</strong>
+			</div>
 
-        <div class="alert alert-success" data-ng-if="succ">
-          <a  class="close" data-dismiss="alert">&times;</a>
-          <strong>Used is added to the friend list</strong>
-        </div>
+			<form role="form">
+				<div class="form-group">
+					<label>Search for a friend</label>
+					<input class="form-control" id="name" data-ng-model="insertedUser"
+						   placeholder="EMAIL or name credentials">
+				</div>
+				<br>
+				<button type="button" class="btn btn-default" aria-label="Left Align">
+					<span class="glyphicon " aria-hidden="true" data-ng-click="addingUser()">add friend </span>
+				</button>
 
-        <form role="form">
-          <div class="form-group">
-            <label>Search for a friend</label>
-            <input class="form-control" id="name" data-ng-model="insertedUser" placeholder="EMAIL or name credentials">
-          </div>
-          <br>
-          <button type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon " aria-hidden="true" data-ng-click="addingUser()">add friend </span>
-        </button>
-
-        </form>
-        <br>
+			</form>
+			<br>
 
 
-        <table class="table">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>email</th>
-            <th>action</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr data-ng-repeat="friend in friendsList">
-            <td>{{friend.name}}</td>
-            <td>{{friend.email}}</td>
-            <td><button type="button" class="btn btn-default" aria-label="Left Align">
-              <a href="#/process-transaction"> <span class="glyphicon glyphicon-transfer" aria-hidden="true">send money </span>
-              </a>
-            </button></td>
+			<table class="table">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>email</th>
+					<th>action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr data-ng-repeat="friend in friendsList">
+					<td>{{friend.name}}</td>
+					<td>{{friend.email}}</td>
+					<td>
+						<button type="button" class="btn btn-default" aria-label="Left Align">
+							<a href="#/process-transaction">
+								<span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> send money
+							</a>
+						</button>
+					</td>
 
-          </tr>
-          </tbody>
-        </table>
+				</tr>
+				</tbody>
+			</table>
 
 
+		</div>
 
-      </div>
-    </div>
-
-  </div>
+	</div>
 
 </div>
 </div>

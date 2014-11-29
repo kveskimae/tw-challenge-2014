@@ -170,3 +170,41 @@
 		margin-right: 0;
 	}
 }
+
+a.btn,
+.btn {
+	background: #55d944;
+	border: 0;
+	border-radius: 2px;
+	box-shadow: 0 2px 0 #3C9830;
+	color: #fff !important;
+	font: 300 18px 'proxima-nova', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+
+	&:hover {
+		background: #58E346;
+		box-shadow: 0 2px 0 #3d9f31;
+		color: #FFF !important;
+		text-decoratine: none;
+	}
+
+	&:active {
+		box-shadow: 0 1px 0 #3d9f31;
+	}
+}
+
+.hack-one {
+	padding-top: 250px;
+}
+
+.navbar-header {
+	width: 100%;
+}
+
+.hack-header {
+	width: auto;
+}
+
+.hack-three {
+	margin: 75px 0 0 150px;
+}
