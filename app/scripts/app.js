@@ -27,10 +27,10 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-        .when('/friends', {
-          templateUrl: 'views/friends.html',
-          controller: 'FriendsCtrl'
-        })
+      .when('/friends', {
+        templateUrl: 'views/friends.html',
+        controller: 'FriendsCtrl'
+      })
       .when('/history', {
         templateUrl: 'views/history.html',
         controller: 'HistoryCtrl'
@@ -45,7 +45,11 @@ angular
       })
       .when('/process-transaction', {
         templateUrl: 'views/processTransaction.html',
-        controller: 'TransactionCtrl'
+        controller: 'TransactionCtrl'})
+
+      .when('/unauth', {
+        templateUrl: 'views/unauth.html',
+        controller: 'UnAuthCtrl'
       })
       .otherwise({
         redirectTo: '/'
