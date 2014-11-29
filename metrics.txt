@@ -1,1 +1,31 @@
 How are you going to measure the success of your MVP?
+
+Ideas for metrics:
+
+Visitor count for landing page:
+	
+	* Count clicks on video
+	* Check site traffic (percent) - related to marketing
+	* Check how many people sign up form the total visitors (percent)
+
+REGISTRATION:
+
+	* How many people sign up using
+		a) Google
+		b) Facebook
+		c) Simple email registration form -email -password
+		
+	* Using import friends
+		a) How many people click yes
+		b) How many people click no
+		
+USING THE SYSTEM:
+
+	* How many people of existing users make a transaction (count people who have made a transaction vs all)
+	* Check fallout ratio after transactions
+	* Check fallout for a period of time (has a user remained part of the system after 3 months, after 6 months)
+	* how many transactions are made during the day/week/month - traffic
+	
+THINGS TO THINK ABOUT:
+
+	* How to influence metrics
