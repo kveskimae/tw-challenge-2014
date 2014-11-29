@@ -29,10 +29,6 @@ angular.module('djoisajdoijdsApp')
     }
 
 
-
-
-
-
     $scope.friendsList = [
       {name: "Ivar Guy", email: "ivar@example.com", verified: true},
       {name: "Quagmire", email: "sexybeast@example.com", verified: false},
