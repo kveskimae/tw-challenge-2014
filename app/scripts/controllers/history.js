@@ -23,6 +23,11 @@ angular.module('djoisajdoijdsApp')
         status: 'pending'
       },
       {
+        name: 'Dmitri Deemon',
+        sum: '$ 200',
+        status: 'received'
+      },
+      {
         name: 'John Doe',
         sum: '$ 200',
         status: 'rejected'

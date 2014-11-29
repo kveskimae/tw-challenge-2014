@@ -16,12 +16,14 @@ angular.module('djoisajdoijdsApp')
 
 
     $scope.addingUser = function(){
-      if($scope.insertedUser !=='correct@email.com'){
+      if($scope.insertedUser !=='friend@friend.com'){
         $scope.error = true;
+        $scope.friendsList.push({name: "Balbo", email: "wrongfriend@friend.com", verified: true});
+
       }
       else{
         $scope.succ = true;
-        $scope.friendsList.push({name: "Balbo", email: "correct@email.com", verified: true});
+        $scope.friendsList.push({name: "Balbo", email: "friend@friend.com", verified: true});
 
       }
 
