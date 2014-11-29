@@ -43,9 +43,11 @@ angular
         templateUrl: 'views/bank-data.html',
         controller: 'BankDataCtrl'
       })
+      .when('/process-transaction', {
+        templateUrl: 'views/processTransaction.html',
+        controller: 'TransactionCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
   });
-
-
