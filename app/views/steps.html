@@ -1,7 +1,39 @@
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li>
+        <a href="#">Friends</a>
+      </li>
+      <li>
+        <a href="#">Bank account</a>
+      </li>
+      <li>
+        <a href="#">History</a>
+      </li>
+      <li>
+        <a href="#">Settings</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+
+
+</div>
+
 <div class="jumbotron">
   <h2>Transfer money to your friend in 2 steps : </h2>
+
   <p class="lead">
-    1. Add you bank account data <a class="btn btn-default btn-sm  btn-success" ng-href="#">ADD<span class="glyphicon" ng-click="fillBankData()"></span></a>
+    <span data-ng-if="bankData.ok">
+     <strike> 1. Add you bank account data </strike>
+  </span>
+
+    <span data-ng-if="!bankData.ok">
+     1. Add you bank account data <a  ng-click="fillBankData()" class="btn btn-default btn-sm  btn-success" >ADD<span class="glyphicon"></span></a>
+  </span>
+
   <br>
     2. Make transfer <a class="btn btn-sm btn-success" ng-href="#">ADD<span class="glyphicon"></span></a>
   <br>

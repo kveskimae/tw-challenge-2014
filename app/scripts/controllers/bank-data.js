@@ -8,7 +8,7 @@
  * Controller of the djoisajdoijdsApp
  */
 angular.module('djoisajdoijdsApp')
-  .controller('BankDataCtrl', function ($scope) {
+  .controller('BankDataCtrl', function ($scope,$location,$rootScope) {
     $scope.bankData = {};
     $scope.bankData.firstName = null;
     $scope.bankData.lastName = null;
@@ -20,8 +20,11 @@ angular.module('djoisajdoijdsApp')
       if(!($scope.bankData.firstName && $scope.bankData.lastName && $scope.bankData.accountNumber)){
         $scope.err = true;
       }
-
-
+      else{
+        $scope.bankData.ok = true;
+        $rootScope.bankData = $scope.bankData;
+        $location.path('/steps')
+      }
       console.log($scope.bankData,"saved")
     }
 

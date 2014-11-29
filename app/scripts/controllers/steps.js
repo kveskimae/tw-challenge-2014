@@ -8,14 +8,16 @@
  * Controller of the djoisajdoijdsApp
  */
 angular.module('djoisajdoijdsApp')
-  .controller('StepsCtrl', function ($scope, $location) {
+  .controller('StepsCtrl', function ($scope, $location, $rootScope) {
+
+    console.log($rootScope.bankData)
+
+
+    $scope.bankData = $rootScope.bankData;
 
 
     $scope.fillBankData = function(){
-
-
-      console.log("inited","kaks")
-      alert(3)
+      $location.path('/bank-data')
     }
 
 
