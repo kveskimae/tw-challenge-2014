@@ -26,7 +26,7 @@ angular.module('djoisajdoijdsApp')
         name: 'John Doe',
         sum: '$ 200',
         status: 'rejected'
-      }
+      },{name: "Balbo", sum: "$ 1777", status:"completed ;)"}
     ];
 
   });
